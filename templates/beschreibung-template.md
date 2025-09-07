@@ -1,26 +1,13 @@
----
-titel: "TITEL DES BILDES"
-date: "2024-07-01"   # Entstehungsdatum (YYYY-MM-DD) – optional
-format: "70 × 50 cm"
-technik: "Öl auf Leinwand"
-preis: "€ 540"
-bilddatei: "../images/DATEINAME.jpg"
----
+Analysiere dieses Gemälde und verfasse einen Katalogeintrag im Stil von Edwin Heider.
 
-## {{ titel }}
+Vorgaben:
+- Technik: Öl auf Leinwand
+- Format: [Format aus Dateiname, z. B. 60 × 50 cm]
+- Entstehungsjahr: [Jahr aus Dateiname, falls vorhanden]
+- Preis: bei 60×50 cm zwischen 420–520 €, bei größeren Formaten zwischen 540–650 €
 
-**Format:** {{ format }}  
-**Technik:** {{ technik }}  
-**Entstehung:** {{ date }}  
-**Preis:** {{ preis }}
-
-_Beschreibung (poetisch, bildbezogen):_  
-Ein kurzer, stimmungsvoller Text von 4–6 Sätzen, der Licht, Farbe, Stimmung
-und Motiv des Bildes präzise und knapp einfängt. Kein überflüssiges Pathos,
-sondern klare, sinnliche Sprache, die das Bild spürbar macht.
-
----
-
-**Notiz für die Website (optional):**  
-Wenn diese Datei in `beschreibungen/` liegt, kann sie direkt über GitHub Pages angezeigt werden.
-Der Pfad in `bilddatei` muss auf die entsprechende Datei in `images/` verweisen.
+Aufbau der Antwort:
+1. Titel: ein kurzer, poetischer Titel
+2. Beschreibung: 5–7 Sätze, poetisch und bildbezogen. Betonung auf Natur, Licht und Stimmung. Keine zu abstrakten oder kitschigen Formulierungen.
+3. Angaben: Format, Jahr, Technik
+4. Preisempfehlung: konkrete Zahl in Euro (innerhalb des passenden Preisrahmens)
