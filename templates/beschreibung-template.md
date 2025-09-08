@@ -1,13 +1,42 @@
-Analysiere dieses Gemälde und verfasse einen Katalogeintrag im Stil von Edwin Heider.
+name: Textgenerator
 
-Vorgaben:
-- Technik: Öl auf Leinwand
-- Format: [Format aus Dateiname, z. B. 60 × 50 cm]
-- Entstehungsjahr: [Jahr aus Dateiname, falls vorhanden]
-- Preis: bei 60×50 cm zwischen 420–520 €, bei größeren Formaten zwischen 540–650 €
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Titel des Gemäldes'
+        required: true
+        type: string
 
-Aufbau der Antwort:
-1. Titel: ein kurzer, poetischer Titel
-2. Beschreibung: 5–7 Sätze, poetisch und bildbezogen. Betonung auf Natur, Licht und Stimmung. Keine zu abstrakten oder kitschigen Formulierungen.
-3. Angaben: Format, Jahr, Technik
-4. Preisempfehlung: konkrete Zahl in Euro (innerhalb des passenden Preisrahmens)
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prompt bauen
+        id: build_prompt
+        env:
+          TITLE: ${{ github.event.inputs.title }}
+        run: |
+          # Der gesamte Prompt wird als reiner Text in eine Datei geschrieben.
+          # Unquoted EOF -> $TITLE wird von der Shell ersetzt.
+          cat > prompt.txt <<EOF
+Betrachte das Gemälde "$TITLE" von Edwin Heider und verfasse eine bildbezogene Beschreibung. Beschreibe dieses Gemälde in einem klassischen, ruhigen und poetischen Stil. Die Beschreibung soll 4–6 Sätze umfassen und sich auf die Wirkung von Licht und Schatten, die Stimmung und Atmosphäre des Bildes konzentrieren, die Natur und Landschaft als Quelle von Ruhe und Zeitlosigkeit. Die Sprache soll klar und gehoben sein, ohne übertriebenen Schmuck. Verwende Wörter wie Licht, Stille, Weite, Augenblick, Natur, Spiegelung, Stimmung, Zeitlosigkeit, aber in abwechslungsreicher Form. Die Beschreibung soll wirken, als würde sie den Betrachter einladen, innezuhalten und sich in die Stimmung des Bildes hineinzuversetzen.
+
+## Wichtig
+
+Benutze keine technische Analyse, keine Aufzählungen, keine Metaphern, die zu kitschig wirken. Nur eine poetische, bildbezogene Prosa.
+
+Anschließend entwickle eine **explanation** in maximal zwei Sätzen. Diese Erklärung basiert auf Edwin Heiders Biografie, seinem künstlerischen Stil und dem gezeigten Motiv. Wähle dafür genau einen zufälligen Aspekt aus seiner Biografie, leite daraus mögliche Beweggründe oder Stimmungen ab, die das Werk inspiriert haben könnten – benenne diesen Aspekt jedoch nicht konkret, sondern nutze ihn lediglich als kreative Quelle.
+
+## Regeln
+
+1. Antworte ausschließlich im JSON-Format mit den Schlüsseln `description` und `explanation`:
+   ```json
+   {
+     "description": "<your description here>",
+     "explanation": "<your explanation here>"
+   }
