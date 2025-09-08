@@ -1,0 +1,60 @@
+title: "${TITLE}"
+description: >
+Betrachte das Gemälde "${TITLE}" von Edwin Heider und verfasse eine bildbezogene Beschreibung. Beschreibe dieses Gemälde in einem klassischen, ruhigen und poetischen Stil. Die Beschreibung soll 4–6 Sätze umfassen und sich auf die Wirkung von Licht und Schatten, die Stimmung und Atmosphäre des Bildes konzentrieren, die Natur und Landschaft als Quelle von Ruhe und Zeitlosigkeit. Die Sprache soll klar und gehoben sein, ohne übertriebenen Schmuck. Verwende Wörter wie Licht, Stille, Weite, Augenblick, Natur, Spiegelung, Stimmung, Zeitlosigkeit, aber in abwechslungsreicher Form. Die Beschreibung soll wirken, als würde sie den Betrachter einladen, innezuhalten und sich in die Stimmung des Bildes hineinzuversetzen.
+
+## Wichtig
+
+Benutze keine technische Analyse, keine Aufzählungen, keine Metaphern, die zu kitschig wirken. Nur eine poetische, bildbezogene Prosa.
+
+Anschließend entwickle eine **explanation** in maximal zwei Sätzen. Diese Erklärung basiert auf Edwin Heiders Biografie, seinem künstlerischen Stil und dem gezeigten Motiv. Wähle dafür genau einen zufälligen Aspekt aus seiner Biografie, leite daraus mögliche Beweggründe oder Stimmungen ab, die das Werk inspiriert haben könnten – benenne diesen Aspekt jedoch nicht konkret, sondern nutze ihn lediglich als kreative Quelle.
+
+## Regeln
+
+1. Antworte ausschließlich im JSON-Format mit den Schlüsseln `description` und `explanation`:
+   ```json
+   {
+     "description": "<your description here>",
+     "explanation": "<your explanation here>"
+   }
+   ```
+
+2. Weder in `description` noch in `explanation` darf der Titel erwähnt werden.
+
+3. Orientiere dich sprachlich an den Stil-Vorlagen.
+
+4. Verwende niemals "Der Künstler", sondern "Heider" und schreibe in der dritten Person mit einem definitiven Stil. Entscheide dabei zufällig zwischen folgenden Möglichkeiten:
+   - "Heider" kommt am Beginn der `explanation` vor
+   - "Heider" kommt irgendwo in der `explanation` vor
+   - "Heider" kommt gar nicht in der `explanation` vor
+
+## Edwin Heiders Biografie
+
+- Geboren in Salzburg
+- Liebt Hunde
+- Liebt Musik
+- Liebt Gewässer
+- Liebt das Meer
+- Liebt Menschen
+- Lebt in seinem Haus in Faistenau, umgeben von viel Natur und Bergen
+- Echter Quereinsteiger in die Welt der Kunst seit 2022
+- Jahrzehntelange Laufbahn in der internationalen Spitzenhotellerie (Frankreich, Schottland, Schweiz)
+- Aktives Mitglied in einer Bagpipe Band
+
+## Stilvorlagen (Beispiele)
+
+```json
+[
+  {
+    "description": "Die Sonne verschwindet hinter der Baumlinie, der Himmel leuchtet in warmen Purpurtönen. Die stille Wasserfläche reflektiert das Licht, während die dunklen Bäume wie Schattenwächter am Rand stehen.",
+    "explanation": "In diesem Gemälde übersetzt Heider das Spiel von Licht und Schatten in eine stille, fast träumerische Szenerie – eine Einladung zur inneren Einkehr."
+  },
+  {
+    "description": "Ein weiter Blick über den See, eingefasst von kräftigen Bäumen am Ufer und einem Himmel voller Ruhe.",
+    "explanation": "Nichts drängt sich auf, und doch ist alles da – Licht, Spiegelung, Tiefe. Ein Bild, das durch seine Haltung wirkt: würdevoll, klar und unerschüttlich."
+  },
+  {
+    "description": "Drei Kinder tanzen ausgelassen auf einer sonnenbeschienenen Wiese. Im Hintergrund erhebt sich ein markanter Berg vor einem leuchtenden Himmel.",
+    "explanation": "In diesem Kunstwerk spiegelt sich die Verbindung zur Natur und Zuversicht wider, die tief in Heider verwurzelt ist. Die Szene wirkt voller Leben, Hoffnung und Heiterkeit."
+  }
+]
+```
