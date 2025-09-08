@@ -24,11 +24,22 @@ jobs:
           # Der gesamte Prompt wird als reiner Text in eine Datei geschrieben.
           # Unquoted EOF -> $TITLE wird von der Shell ersetzt.
           cat > prompt.txt <<EOF
-Betrachte das Gemälde "$TITLE" von Edwin Heider und verfasse eine bildbezogene Beschreibung. Beschreibe dieses Gemälde in einem klassischen, ruhigen und poetischen Stil. Die Beschreibung soll 4–6 Sätze umfassen und sich auf die Wirkung von Licht und Schatten, die Stimmung und Atmosphäre des Bildes konzentrieren, die Natur und Landschaft als Quelle von Ruhe und Zeitlosigkeit. Die Sprache soll klar und gehoben sein, ohne übertriebenen Schmuck. Verwende Wörter wie Licht, Stille, Weite, Augenblick, Natur, Spiegelung, Stimmung, Zeitlosigkeit, aber in abwechslungsreicher Form. Die Beschreibung soll wirken, als würde sie den Betrachter einladen, innezuhalten und sich in die Stimmung des Bildes hineinzuversetzen.
-
+Betrachte das Gemälde "$TITLE" von Edwin Heider und verfasse eine bildbezogene Beschreibung. Beschreibe dieses Gemälde in einem klassischen, ruhigen und poetischen Stil. Die Beschreibung soll 4–6 Sätze umfassen und sich auf die Wirkung von Licht und Schatten, die Stimmung und Atmosphäre des Bildes konzentrieren, die Natur und Landschaft als Quelle von Ruhe und Zeitlosigkeit. Die Sprache soll klar und gehoben sein, ohne übertriebenen Schmuck. Verwende Wörter wie Licht, Stille, Weite, Augenblick, Natur, Spiegelung, Stimmung, Zeitlosigkeit, aber in abwechslungsreicher Form. Die Beschreibung soll wirken, als würde sie den Betrachter einladen, innezuhalten und sich in die Stimmung des Bildes hineinzuv
 ## Wichtig
 
 Benutze keine technische Analyse, keine Aufzählungen, keine Metaphern, die zu kitschig wirken. Nur eine poetische, bildbezogene Prosa.
+
+Anschließend entwickle eine **explanation** in maximal zwei Sätzen. Diese Erklärung basiert auf Edwin Heiders Biografie, seinem künstlerischen Stil und dem gezeigten Motiv. Wähle dafür genau einen zufälligen Aspekt aus seiner Biografie, leite daraus mögliche Beweggründe oder Stimmungen ab, die das Werk inspiriert haben könnten – benenne diesen Aspekt jedoch nicht konkret, sondern nutze ihn lediglich als kreative Quelle.
+
+## Regeln
+
+1. Antworte ausschließlich im JSON-Format mit den Schlüsseln `description` und `explanation`:
+   ```json
+   {
+     "description": "<your description here>",
+     "explanation": "<your explanation here>"
+   }
+utze keine technische Analyse, keine Aufzählungen, keine Metaphern, die zu kitschig wirken. Nur eine poetische, bildbezogene Prosa.
 
 Anschließend entwickle eine **explanation** in maximal zwei Sätzen. Diese Erklärung basiert auf Edwin Heiders Biografie, seinem künstlerischen Stil und dem gezeigten Motiv. Wähle dafür genau einen zufälligen Aspekt aus seiner Biografie, leite daraus mögliche Beweggründe oder Stimmungen ab, die das Werk inspiriert haben könnten – benenne diesen Aspekt jedoch nicht konkret, sondern nutze ihn lediglich als kreative Quelle.
 
